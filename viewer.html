@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+  <title>JSONL Viewer</title>
+  <link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>JSONL Viewer</h1>
+      <div class="file-input">
+        <input type="file" id="fileInput" accept=".jsonl">
+        <label for="fileInput" tabindex="0">Choose JSONL file</label>
+      </div>
+    </header>
+
+    <div class="controls">
+      <div class="navigation">
+        <button id="prevBtn" disabled aria-label="Previous record">Previous</button>
+        <span id="recordCounter" aria-live="polite">No file loaded</span>
+        <button id="nextBtn" disabled aria-label="Next record">Next</button>
+      </div>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search in records..." aria-label="Search in records">
+        <button id="searchBtn" aria-label="Search">Search</button>
+      </div>
+    </div>
+    
+    <div class="table-container">
+      <table id="recordTable" aria-label="JSONL Records">
+        <caption class="sr-only">Current JSONL record displayed in tabular format</caption>
+        <thead>
+          <tr id="tableHeader">
+            <th scope="col">No data loaded</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr>
+            <td>Load a JSONL file to view data</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="raw-json">
+      <h3>Raw JSON</h3>
+      <pre id="jsonDisplay" aria-live="polite">No record to display</pre>
+    </div>
+  </div>
+  
+  <script src="viewer.js" type="module"></script>
+</body>
+</html>

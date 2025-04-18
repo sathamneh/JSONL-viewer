@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "JSONL Viewer",
+  "version": "1.0",
+  "description": "A tabular viewer for JSONL files",
+  "author": "Suheel Athamneh",
+  "action": {
+    "default_icon": { 
+      "16": "icons/16.png",
+      "48": "icons/48.png",
+      "128": "icons/128.png"
+    },
+    "default_title": "JSONL Viewer: View JSONL files in a tabular format"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": ["storage"],
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "web_accessible_resources": [{
+    "resources": ["viewer.html", "viewer.css", "viewer.js"],
+    "matches": ["<all_urls>"]
+  }],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+}

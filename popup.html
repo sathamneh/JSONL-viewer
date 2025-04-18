@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSONL Viewer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>JSONL Viewer</h1>
+    
+    <div class="file-input">
+      <input type="file" id="fileInput" accept=".jsonl">
+      <label for="fileInput">Choose JSONL file</label>
+    </div>
+    
+    <div class="navigation">
+      <button id="prevBtn" disabled>Previous</button>
+      <span id="recordCounter">No file loaded</span>
+      <button id="nextBtn" disabled>Next</button>
+    </div>
+    
+    <div class="display-area">
+      <pre id="jsonDisplay">No record to display</pre>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
