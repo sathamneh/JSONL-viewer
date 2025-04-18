@@ -1,3 +1,9 @@
+/**
+ * background.js - Background script to handle opening the viewer in a new tab
+ *
+ * Copyright (c) 2025 Suheel Athamneh
+ * Author: Suheel Athamneh
+ */
 // Background script to handle opening the viewer in a new tab
 
 /**

@@ -1,4 +1,9 @@
-// db.js - simple IndexedDB wrapper for JSONL Viewer
+/**
+ * db.js - Simple IndexedDB wrapper for JSONL Viewer
+ *
+ * Copyright (c) 2025 Suheel Athamneh
+ * Author: Suheel Athamneh
+ */
 const DB_NAME = 'jsonl-viewer';
 const STORE_NAME = 'records';
 let dbPromise;

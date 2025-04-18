@@ -1,4 +1,9 @@
-// viewer.js - list-based JSONL Viewer with collapsible records
+/**
+ * viewer.js - List-based JSONL Viewer with collapsible records
+ *
+ * Copyright (c) 2025 Suheel Athamneh
+ * Author: Suheel Athamneh
+ */
 import { getRecord } from './db.js';
 
 // DOM elements

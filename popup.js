@@ -1,3 +1,9 @@
+/**
+ * popup.js - Logic for the popup interface of JSONL Viewer extension
+ *
+ * Copyright (c) 2025 Suheel Athamneh
+ * Author: Suheel Athamneh
+ */
 document.addEventListener('DOMContentLoaded', () => {
   // DOM elements
   const fileInput = document.getElementById('fileInput');

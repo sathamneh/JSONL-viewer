@@ -1,4 +1,9 @@
-// parser.worker.js - Web Worker for parsing JSONL in chunks and saving to IndexedDB
+/**
+ * parser.worker.js - Web Worker for parsing JSONL in chunks and saving to IndexedDB
+ *
+ * Copyright (c) 2025 Suheel Athamneh
+ * Author: Suheel Athamneh
+ */
 import { clearStore, saveRecordsBatch } from './db.js';
 // Polyfill requestIdleCallback in environments where it's not available (e.g., Web Worker)
 const _requestIdleCallback = (typeof requestIdleCallback === 'function')
