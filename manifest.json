@@ -23,7 +23,13 @@
     "128": "icons/128.png"
   },
   "web_accessible_resources": [{
-    "resources": ["viewer.html", "viewer.css", "viewer.js"],
+    "resources": [
+      "viewer.html",
+      "viewer.css",
+      "viewer.js",
+      "db.js",
+      "parser.worker.js"
+    ],
     "matches": ["<all_urls>"]
   }],
   "content_security_policy": {
