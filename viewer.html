@@ -18,36 +18,15 @@
     </header>
 
     <div class="controls">
-      <div class="navigation">
-        <button id="prevBtn" disabled aria-label="Previous record">Previous</button>
-        <span id="recordCounter" aria-live="polite">No file loaded</span>
-        <button id="nextBtn" disabled aria-label="Next record">Next</button>
-      </div>
+      <span id="recordCounter" aria-live="polite">No file loaded</span>
       <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Search in records..." aria-label="Search in records">
-        <button id="searchBtn" aria-label="Search">Search</button>
+        <label for="searchInput" class="sr-only">Search records</label>
+        <input id="searchInput" type="text" placeholder="Search...">
+        <button id="searchBtn" disabled>Search</button>
       </div>
     </div>
-    
-    <div class="table-container">
-      <table id="recordTable" aria-label="JSONL Records">
-        <caption class="sr-only">Current JSONL record displayed in tabular format</caption>
-        <thead>
-          <tr id="tableHeader">
-            <th scope="col">No data loaded</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody">
-          <tr>
-            <td>Load a JSONL file to view data</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    
-    <div class="raw-json">
-      <h3>Raw JSON</h3>
-      <pre id="jsonDisplay" aria-live="polite">No record to display</pre>
+    <div id="listContainer" class="list-container">
+      <!-- Records will be listed here; click to expand -->
     </div>
   </div>
   

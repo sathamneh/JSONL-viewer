@@ -2,6 +2,8 @@
 
 A Chrome extension that displays JSONL (JSON Lines) files in a tabular format, with easy navigation and search capabilities.
 
+> **Note:** The current UI layout is a work in progress and may not be fully optimized. We plan to refine and improve it in the near future.
+
 ## Features
 
 - Open JSONL files directly in a Chrome tab
@@ -108,7 +110,7 @@ This extension follows Chrome's recommended best practices:
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
+Feel free to use, modify, and distribute it as you wish. Contributions are welcome!
 
----
-
-Created by Suheel Athamneh
+### Author
+- Suheel Athamneh (suheel</at/>athamneh.info)

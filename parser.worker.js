@@ -9,9 +9,11 @@ const _requestIdleCallback = (typeof requestIdleCallback === 'function')
 self.onmessage = async function(event) {
   const { text } = event.data;
   try {
-    // Split lines and filter empty
+    // Split lines, filter empty, and prepare key tracking
     const lines = text.split('\n').filter(line => line.trim() !== '');
     const total = lines.length;
+    // Track all field keys across records
+    const allKeys = new Set();
     // Clear existing data
     await clearStore();
     const BATCH = 500;
@@ -27,6 +29,12 @@ self.onmessage = async function(event) {
           batch.push({ __error: err.message, __raw: lines[i] });
         }
       }
+      // Collect keys from this batch
+      batch.forEach(rec => {
+        if (rec && typeof rec === 'object') {
+          Object.keys(rec).forEach(key => allKeys.add(key));
+        }
+      });
       // Save to IndexedDB
       await saveRecordsBatch(batch, offset);
       offset = end;
@@ -35,8 +43,8 @@ self.onmessage = async function(event) {
       // Yield to idle (with fallback)
       await new Promise(resolve => _requestIdleCallback(resolve, { timeout: 200 }));
     }
-    // Done
-    self.postMessage({ done: true, total });
+    // Done: send total and collected keys
+    self.postMessage({ done: true, total, keys: Array.from(allKeys) });
   } catch (err) {
     self.postMessage({ error: err.message });
   }
